@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function () {
+		document.getElementsByTagName('form')[0].onsubmit = function(){
+			var opt = document.getElementsByClassName('opt');
+			var optSelectedCnt = 0;
+			for (var i = 0; i < opt.length; i++) {
+				// opt[i].selected
+				if(opt[i].selected){
+					optSelectedCnt++;
+				}
+			}
+			alert('선택된 option의 갯수 : ' + optSelectedCnt);
+			if(!optSelectedCnt){
+				alert('반드시 하나는 선택해주세요.');
+				return false;
+			}
+		};
+	};
+</script>
+</head>
+<body>
+	<h2>2~9단까지 하나는 선택</h2>
+	<form action="#">
+		<select name="su" multiple="multiple" size="5">
+			<option class="opt">2단</option>
+			<option class="opt">3단</option>
+			<option class="opt">4단</option>
+			<option class="opt">5단</option>
+			<option class="opt">6단</option>
+			<option class="opt">7단</option>
+			<option class="opt">8단</option>
+			<option class="opt">9단</option>
+		</select>
+		<input type="submit" value="전송" />
+	</form>
+</body>
+</html>

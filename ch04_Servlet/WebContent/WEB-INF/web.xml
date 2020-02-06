@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ch04_Servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 공유파라미터 만들기 맨위에 만든다 -->
+  <!-- 모든 서블릿에서 사용할수있다. -->
+  <context-param>
+  	<param-name>contextId</param-name>
+  	<param-value>scott</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>contextPw</param-name>
+  	<param-value>tiger</param-value>
+  </context-param>
+  
+  
+  <!-- 특정 서블릿에서만 구동된다 -->
+  <servlet>
+  	<servlet-name>Ex4_initParam</servlet-name>
+  	<servlet-class>com.tj.lect1.Ex4_initParam</servlet-class>
+  	<init-param>
+  		<param-name>id</param-name>
+  		<param-value>root</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>pw</param-name>
+  		<param-value>mysql</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>jdbcdriver</param-name>
+  		<param-value>com.mysql.jdbc.Driver</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Ex4_initParam</servlet-name>
+  	<url-pattern>/Ex4_initParam</url-pattern>
+  </servlet-mapping>
+  <!--  
+  <listener>
+  	<listener-class>com.tj.lect1.Ex6_Listener</listener-class>
+  </listener>
+  -->
+  
+  <!-- 서블릿.java에 어노테이션을 선언안하고 이곳에 선언하기
+       둘다 선언이 되어 있으면 xml파일을 먼저 실행한다.
+   -->
+  <!-- <servlet>
+  <servlet-name>Ex0</servlet-name> 서블릿 이름
+  <servlet-class>com.tj.lect1.Ex0</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Ex0</servlet-name>
+  <url-pattern>/Ex00</url-pattern>
+  </servlet-mapping> -->
+  
+  <!-- http://localhost:8181/ch04_Servlet/Ex00 -->
+</web-app>

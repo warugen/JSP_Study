@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function () {
+		document.getElementById('frm1').onsubmit = function () {
+			var getRadio = document.getElementsByName('colorG');
+			var radioCnt=0;
+			for (var i = 0; i < getRadio.length; i++) {
+				radioCnt += getRadio[i].checked;
+			}
+			
+			if(!radioCnt){
+				alert('배경색을 선택해주세요.');
+				return false;
+			}
+		};
+		
+		document.getElementById('frm2').onsubmit = function() {
+			var postRadio = document.getElementsByName('colorP');
+			var radioCnt=0;
+			for (var i = 0; i < postRadio.length; i++) {
+				radioCnt += postRadio[i].checked;
+			}
+			
+			if(!radioCnt){
+				alert('배경색을 선택해주세요.');
+				return false;
+			}
+		};
+	};
+</script>
+</head>
+<body>
+	<form action="../Exam5" method="get" id=frm1>
+	<fieldset>
+			<legend>배경색을 선택하세요(Get방식)</legend>
+			<input type="radio" name="colorG" value="0" />빨강 
+			<input type="radio" name="colorG" value="1" />주황 
+			<input type="radio" name="colorG" value="2" />노랑 
+			<input type="radio" name="colorG" value="3" />초록 
+			<input type="radio" name="colorG" value="4" />파랑 
+			<input type="radio" name="colorG" value="5" />남색 
+			<input type="radio" name="colorG" value="6" />보라
+			<input type="submit" value="선택확인" />
+	</fieldset>
+	</form>
+	<p></p>
+	<form action="../Exam5" method="post" id=frm2>
+	<fieldset>
+			<legend>배경색을 선택하세요(Post방식)</legend>
+			<input type="radio" name="colorP" value="0" />빨강 
+			<input type="radio" name="colorP" value="1" />주황 
+			<input type="radio" name="colorP" value="2" />노랑 
+			<input type="radio" name="colorP" value="3" />초록 
+			<input type="radio" name="colorP" value="4" />파랑 
+			<input type="radio" name="colorP" value="5" />남색 
+			<input type="radio" name="colorP" value="6" />보라
+			<input type="submit" value="선택확인" />
+	</fieldset>
+	</form>
+
+</body>
+</html>

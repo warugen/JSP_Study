@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		document.getElementsByTagName('form')[0].onsubmit = function () {
+			// 첫번째 동의하는 라디오버튼값 가져와서 체크했는지 확인하기
+			var agreeYes = document.getElementsByName('agree')[0];
+			if(!agreeYes.checked) {
+				alert('동의하셔야 진행됩니다.')
+				return false;
+			}
+		};
+	};
+</script>
+</head>
+<body>
+	<form action="#">
+	<fieldset>
+	<h3>코로나 바이러스 발생자 및 의심자는 집에서 쉬어주세요.</h3>
+		<input type="radio" name="agree" value="yes" />동의합니다.
+		<input type="radio" name="agree" value="no" />동의하지않습니다.
+		<input type="submit" />
+	</fieldset>
+	</form>
+	
+</body>
+</html>

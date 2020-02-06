@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function () {
+		document.getElementById('frm').onsubmit = function () {
+			var num = document.getElementsByName('num')[0];
+            var su = Number(num.value);
+            console.log(su);
+            if (su <= 0 || su != Math.trunc(su)) {
+                alert('반드시 자연수를 입력해주세요.');
+                num.value = '';
+                num.focus();
+                return false;
+            }
+		};
+	};
+</script>
+</head>
+<body>
+
+    <form action="../Exam3" id="frm">        
+    <fieldset>
+	<legend><h2>누적하고 싶은 최종 수 입력</h2></legend>
+	    <input type="number" name="num" />
+        <input type="submit" value="누적결과" />
+    </fieldset>
+    </form>
+</body>
+</html>
