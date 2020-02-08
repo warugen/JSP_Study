@@ -10,6 +10,7 @@
 <link href="<%=conPath %>/css/style.css" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="../lect3_join/header.jsp"></jsp:include>
 <%
 	Enumeration<String> sAttNames = session.getAttributeNames();
 	int cnt = 0;

@@ -10,7 +10,6 @@
 <link href="<%=conPath %>/css/style.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
 <%
 	String agree = request.getParameter("agree");
 	String msg = "";
@@ -20,7 +19,10 @@
 		String pw = session.getAttribute("pw").toString();
 		String name = session.getAttribute("name").toString();
 		// 파일경로 내 컴퓨터에 맞게 확인하기
-		String file = "D:/mega_IT/source/6_JSP/ch08_session/WebContent/WEB-INF/" + id + ".txt";
+		// 학원
+		//String file = "D:/mega_IT/source/6_JSP/ch08_session/WebContent/WEB-INF/" + id + ".txt";
+		// 우리집
+		String file = "C:/mega_IT/source/JSP_Study/ch08_session/WebContent/WEB-INF" + id + ".txt";
 		PrintWriter writer = null;
 		
 		try{

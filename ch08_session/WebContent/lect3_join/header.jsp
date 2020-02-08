@@ -44,8 +44,8 @@ header #nav ul li a {
 	} else {	// 로그인전 헤더화면
 	%>
 		<ul>
-		<li><a href="join.jsp">회원가입</a></li>
-		<li><a href="login.jsp">로그인</a></li>
+		<li><a href="../lect3_join/join.jsp">회원가입</a></li>
+		<li><a href="../lect2_login/login.jsp">로그인</a></li>
 		<li><a href="welcome.jsp">홈</a></li>
 	</ul>
 	<%

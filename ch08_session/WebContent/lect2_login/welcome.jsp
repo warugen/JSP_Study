@@ -9,6 +9,7 @@
 <link href="<%=conPath %>/css/style.css" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="../lect3_join/header.jsp"></jsp:include>
 <%
 	// 바로 이페이지로 접속하면 name, id는 null이기 때문에 toString()을 하면 에러가 난다.
 	String name = (String)session.getAttribute("name");
