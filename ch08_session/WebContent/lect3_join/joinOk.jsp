@@ -22,7 +22,7 @@
 		// 학원
 		//String file = "D:/mega_IT/source/6_JSP/ch08_session/WebContent/WEB-INF/" + id + ".txt";
 		// 우리집
-		String file = "C:/mega_IT/source/JSP_Study/ch08_session/WebContent/WEB-INF" + id + ".txt";
+		String file = "C:/mega_IT/source/JSP_Study/ch08_session/WebContent/WEB-INF/" + id + ".txt";
 		PrintWriter writer = null;
 		
 		try{
