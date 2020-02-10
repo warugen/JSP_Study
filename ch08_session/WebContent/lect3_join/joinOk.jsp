@@ -20,9 +20,9 @@
 		String name = session.getAttribute("name").toString();
 		// 파일경로 내 컴퓨터에 맞게 확인하기
 		// 학원
-		//String file = "D:/mega_IT/source/6_JSP/ch08_session/WebContent/WEB-INF/" + id + ".txt";
+		String file = "D:/mega_IT/source/6_JSP/ch08_session/WebContent/WEB-INF/" + id + ".txt";
 		// 우리집
-		String file = "C:/mega_IT/source/JSP_Study/ch08_session/WebContent/WEB-INF/" + id + ".txt";
+		//String file = "C:/mega_IT/source/JSP_Study/ch08_session/WebContent/WEB-INF/" + id + ".txt";
 		PrintWriter writer = null;
 		
 		try{
