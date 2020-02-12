@@ -1,4 +1,4 @@
--- ������ ���̺� �����ϱ�
+-- 강제로 테이블 삭제하기
 DROP TABLE MEMBER CASCADE CONSTRAINTS;
 
 CREATE TABLE MEMBER (
@@ -13,16 +13,19 @@ CREATE TABLE MEMBER (
 
 SELECT * FROM MEMBER;
 
--- ȸ������ (ID, NAME, PW, PHONE1, PHONE2, PHONE3, GENDER)
-INSERT INTO MEMBER VALUES ('AAA', 'ȫ�浿', '111', '010', '9999', '8888', 'M');
+-- 회원가입 (ID, NAME, PW, PHONE1, PHONE2, PHONE3, GENDER)
+INSERT INTO MEMBER VALUES ('AAA', '홍길동', '111', '010', '9999', '8888', 'M');
 
--- �α��� (ID, PW)
--- 1. ID�� PW�� �´���
--- 2. ID�� ������ �׾��̵��� ����� ����(SESSION�� �߰��ϱ� ����)
-SELECT * FROM MEMBER WHERE ID='AAA' AND PW = '111';
+-- 로그인 (ID, PW)
+-- 1. ID와 PW가 맞는지
+-- 2. ID가 맞으면 그아이디인 사람의 정보(SESSION에 추가하기 위함)
+SELECT * FROM MEMBER WHERE ID='AAA' AND PW = '123';
 
--- ȸ������ ����
-UPDATE MEMBER SET NAME = '���浿', PW = '123', PHONE1 = '010', PHONE2 = '8888', PHONE3 = '7777', GENDER = 'F';
+-- 회원정보 수정
+-- 1.해당 회원의 id가 있는지 검색
+SELECT * FROM MEMBER WHERE ID='bbb';
+-- 2. 해당 회원 정보 수정하기
+UPDATE MEMBER SET NAME = '고길동', PW = '123', PHONE1 = '010', PHONE2 = '8888', PHONE3 = '7777', GENDER = 'F';
 
 COMMIT;
 
