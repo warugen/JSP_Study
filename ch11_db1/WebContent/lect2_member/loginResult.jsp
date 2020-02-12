@@ -12,8 +12,11 @@
 	String name = (String)session.getAttribute("name");
 	String id = (String)session.getAttribute("id");
 %>
-	<h2><%=name %>(<%=id %>)님 반갑습니다. 빠----끄</h2>
+	<h2><%=name %>(<%=id %>)님 반갑습니다. </h2>
+	<!--  
 	<button onclick="location.href='modify.jsp'">회원정보수정</button>
+	-->
+	<button onclick="location.href='modify2.jsp'">회원정보수정</button>
 	<button onclick="location.href='logout.jsp'">로그아웃</button>
 	
 </body>
