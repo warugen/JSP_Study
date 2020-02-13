@@ -28,26 +28,14 @@
 	System.out.println("name : " + name);
 	System.out.println("tel : " + tel);
 	
-	if(request.getParameter("search")!=null){
-		// 검색버튼 눌렀을때		
-		if (name !=null && tel !=null){
-			// 이름과 전화번호를 동시에 검색
-			dtos = fDao.searchName(name, tel);
-		} else if(name !=null){
-			// 이름으로 검색
-			dtos = fDao.searchName(name);
-		} else if (tel !=null) {
-			// 전화번호로 검색
-			dtos = fDao.searchTel(tel);
-		}
-	} else {
-		// 친구등록버튼 눌렀을때
-		result = fDao.insertFriend(dto);
-		if(result > 0){
-			response.sendRedirect("friendInputList.jsp?result=success");
-	  } else {		
-	   		response.sendRedirect("friendInputList.jsp?result=fail");
-	  }
+
+	// 친구등록버튼 눌렀을때
+	result = fDao.insertFriend(dto);
+	if(result > 0){
+		response.sendRedirect("friendInputList.jsp?result=success");
+  	} else {		
+   		response.sendRedirect("friendInputList.jsp?result=fail");
+  
 	}%>
 </body>
 </html>
