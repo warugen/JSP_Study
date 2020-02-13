@@ -14,7 +14,7 @@ CREATE TABLE MEMBER (
 SELECT * FROM MEMBER;
 
 -- 회원가입 (ID, NAME, PW, PHONE1, PHONE2, PHONE3, GENDER)
-INSERT INTO MEMBER VALUES ('AAA', '홍길동', '111', '010', '9999', '8888', 'M');
+INSERT INTO MEMBER VALUES ('aaa', '홍길동', '111', '010', '9999', '8888', 'M');
 
 -- 로그인 (ID, PW)
 -- 1. ID와 PW가 맞는지
