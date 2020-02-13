@@ -107,6 +107,35 @@ public class FriendDAO {
 	public ArrayList<FriendDTO> searchNameTel(String name, String tel) {
 		ArrayList<FriendDTO> dtos = new ArrayList<FriendDTO>();
 		System.out.println("이름과 전화번호로 검색");
+		
+		Connection conn = null;
+		PreparedStatement  pstmt = null;
+		ResultSet  rs   = null;
+		String sql = "SELECT * FROM FRIEND WHERE NAME LIKE '%'||?||'%' AND TEL LIKE '%'||?||'%'";
+		
+		try {
+			conn = DriverManager.getConnection(url, uid, upw);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, tel);
+			rs = pstmt.executeQuery();
+
+			while(rs.next()) {
+				FriendDTO dto = new FriendDTO();
+				dto.setSno(rs.getInt("no"));
+				dto.setName(rs.getString("name"));
+				dto.setTel(rs.getString("tel"));
+				dtos.add(dto);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e) { }
+		}
 		return dtos;
 	}
 }
