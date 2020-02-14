@@ -30,4 +30,5 @@ SELECT * FROM MEMBER WHERE ID = 'aaa';
 SELECT * FROM MEMBER WHERE ID = 'aaa';
 
 -- 5. 회원정보 수정
-
+UPDATE MEMBER SET PW = '111', NAME = '김길동', EMAIL = 'a@a.com', BIRTH = '1992-01-01', ADDRESS='서울시 용산구'
+    WHERE ID = 'aaa';
