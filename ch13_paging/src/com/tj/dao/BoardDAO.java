@@ -18,7 +18,7 @@ import com.tj.dto.BoardDTO;
 public class BoardDAO {
 	
 	public static final int SUCCESS = 1;
-	public static final int FAIL = 1;
+	public static final int FAIL = 0;
 	
 	private static BoardDAO instance;
 	public static BoardDAO getInstance() {
