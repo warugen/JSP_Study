@@ -30,16 +30,16 @@
 		re_level = dto.getRe_level();
 		
 		System.out.println("writeForm.jsp - ref : " + ref);
-		System.out.println("writeForm.jsp - ref_step : " + re_step);
+		System.out.println("writeForm.jsp - re_step : " + re_step);
 		System.out.println("writeForm.jsp - re_level : " + re_level);
 	}
 %>
 <form action="writePro.jsp" method="post">
-	<input type="hidden" name="pageNum" value="<%=pageNum %>" />
-	<input type="hidden" name="num" value="<%=num %>" />
-	<input type="hidden" name="ref" value="<%=ref %>" />
-	<input type="hidden" name="ref_step" value="<%=re_step %>" />
-	<input type="hidden" name="re_level" value="<%=re_level %>" />
+	<input type="text" name="pageNum" value="<%=pageNum %>" />
+	<input type="text" name="num" value="<%=num %>" />
+	<input type="text" name="ref" value="<%=ref %>" />
+	<input type="text" name="re_step" value="<%=re_step %>" />
+	<input type="text" name="re_level" value="<%=re_level %>" />
 	<table>
 		<caption>게시판 글쓰기</caption>
 		<tr>
