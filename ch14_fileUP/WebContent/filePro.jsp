@@ -50,6 +50,8 @@
 		if(serverFile.exists()){
 			is = new FileInputStream(serverFile);
 			os = new FileOutputStream("D:\\mega_IT\\source\\6_JSP\\ch14_fileUP\\WebContent\\fileUpFolder/" + filename);
+			// 집에 있는 경로로 설정해주기
+			//os = new FileOutputStream("C:\\mega_IT\\source\\JSP_Study\\ch14_fileUP\\WebContent\\fileUpFolder/" + filename);
 			byte[] bs = new byte[(int)serverFile.length()];
 			while(true){
 				int nReadCnt = is.read(bs);	// nReadCnt : 읽어온 바이트 수
