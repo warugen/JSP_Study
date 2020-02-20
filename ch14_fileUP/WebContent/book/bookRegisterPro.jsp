@@ -82,6 +82,7 @@
 	뒤바껴서 나오는지 체크하기
 	String 	bImage1 	= image[1]!=null ? image[1] : "NOTHING.JPG";
 	String 	bImage2 	= image[0]!=null ? image[0] : "noImg.png";
+	
 	*/
 	String 	bImage1 	= image[0]!=null ? image[0] : "NOTHING.JPG";
 	String 	bImage2 	= image[1]!=null ? image[1] : "noImg.png";
