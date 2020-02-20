@@ -35,6 +35,7 @@
 			String param = paramNames.nextElement();
 			image[idx] = mRequest.getFilesystemName(param);
 			
+			// 원래는 마지막에 첨부한 파일부터 불러오는게 정상인데 지금은 처음 첨부한것들부터 나오는증상 계속 그러는지 확인필요
 			System.out.println(idx + "번째 처리한 파라미터 이름 : " + param + "/ 파일 이름 : " + image[idx]);
 			
 			out.println(idx + "번째 처리한 파라미터 이름 : " + param + "/ 파일 이름 : " + image[idx] + "<br>");
@@ -76,8 +77,14 @@
 	String 	bTitle		= mRequest.getParameter("bTitle");
 	System.out.println("타이틀 : "+bTitle);
 	int 	bPrice 		= Integer.parseInt(mRequest.getParameter("bPrice"));
+	/*
+	원래대로라면 image[]의 순서를 바꿔줘야한다.
+	String 	bImage1 	= image[1]!=null ? image[1] : "NOTHING.JPG";
+	String 	bImage2 	= image[0]!=null ? image[0] : "noImg.png";
+	*/
 	String 	bImage1 	= image[0]!=null ? image[0] : "NOTHING.JPG";
 	String 	bImage2 	= image[1]!=null ? image[1] : "noImg.png";
+	
 	String	bContent 	= mRequest.getParameter("bContent");
 	int		bDiscount 	= Integer.parseInt(mRequest.getParameter("bDiscount"));
 	
