@@ -79,6 +79,7 @@
 	int 	bPrice 		= Integer.parseInt(mRequest.getParameter("bPrice"));
 	/*
 	원래대로라면 image[]의 순서를 바꿔줘야한다.
+	뒤바껴서 나오는지 체크하기
 	String 	bImage1 	= image[1]!=null ? image[1] : "NOTHING.JPG";
 	String 	bImage2 	= image[0]!=null ? image[0] : "noImg.png";
 	*/
