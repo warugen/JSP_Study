@@ -13,10 +13,10 @@
 	#content_form {
 		width: 1000px;
 		margin : 0px auto;
-		height: 400px;
+		height: 500px;
 		text-align: center;
 		color : #003300;
-		padding-top: 200px;
+		padding-top: 100px;
 	}
 </style>
 </head>
