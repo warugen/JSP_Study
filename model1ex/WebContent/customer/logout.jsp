@@ -28,8 +28,10 @@
 <body>
 <jsp:include page="../main/header.jsp"></jsp:include>
 <div id="logOutForm_wrap">
-<% session.invalidate(); %>
-로그아웃 되었습니다.
+<% 
+	session.invalidate();
+	response.sendRedirect("../main/main.jsp");
+%>
 </div>
 <jsp:include page="../main/footer.jsp"></jsp:include> 
 </body>

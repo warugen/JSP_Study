@@ -5,25 +5,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/footer.css" rel="stylesheet">
+<style>
+body {
+	background-color: #ffffaa;
+}
+
+footer {
+	position : absolute;
+	left : 0;
+	bottom : 0;
+	width : 100%;
+	/*height: 50px;*/
+	background-color: #003300;
+}
+
+footer #footer_info {
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+}
+
+footer #footer_info p {
+	margin: 5px auto;
+}
+</style>
+
 </head>
 <body>
 	<footer>
-		<div class="office_logo">
-			<img
-				src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-				alt="로고" />
+		<div id="footer_info">
+			<p>(주)조은회사</p>
+			<p>서울특별시 아무구 몰라로 98길 76 조은빌딩</p>
 		</div>
-		<div class="office_address">
-			<ul>
-				<li>서울시 종로구 수표로 105 육의전빌딩 8F | TEL : 02-766-8376 | FAX :
-					02-222-3456</li>
-				<li>사업자등록번호 : 000-12-00000 | 통신판매업신고 : 종로 제00000호 | 대표이사 : 홍길동</li>
-				<li>더조은쇼핑 문의 메일 : webmaster@tjoeun.com</li>
-			</ul>
-		</div>
-		<div class="copyright">©2020 TJOENSHOP.Co.,Ltd. All Rights
-			Reserve</div>
 	</footer>
 </body>
 </html>

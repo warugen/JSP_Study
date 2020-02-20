@@ -1,0 +1,15 @@
+@charset "UTF-8";
+#content_form body { 
+	background-color: #FFF0B5; 
+	font-size: 9pt;
+}
+#content_form table{ border: pink solid 2px; margin: 10px auto;}
+#content_form tr {background-color: #FFE271; }
+#content_form tr:HOVER {
+	background-color: orange;
+	cursor: pointer;
+}
+#content_form td, #content_form th { text-align: center; padding: 5px;}
+#content_form caption { font-size: 25px; }
+#content_form h2 {text-align: cetner; color:red;}
+#content_form a {text-decoration: none;}

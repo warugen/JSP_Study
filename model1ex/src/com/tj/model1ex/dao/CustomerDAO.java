@@ -1,9 +1,12 @@
 package com.tj.model1ex.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -222,5 +225,105 @@ public class CustomerDAO {
 		
 		return result;
 	}
-
+	
+	// 회원 목록 (startRow, endRow)
+	public ArrayList<CustomerDTO> listCustomer(int startRow, int endRow){
+		ArrayList<CustomerDTO> dtos = new ArrayList<CustomerDTO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "SELECT * FROM (SELECT ROWNUM RN, A.* FROM(SELECT * FROM CUSTOMER ORDER BY CID) A) " + 
+				" WHERE RN BETWEEN ? AND ?";
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String cid = rs.getString("cId");
+				String cpw = rs.getString("cPw");
+				String cname = rs.getString("cName");
+				String ctel	= rs.getString("ctel");
+				String cemail = rs.getString("cemail");
+				String caddress = rs.getString("caddress");
+				Date   cbirth = rs.getDate("cbirth");
+				String cgender = rs.getString("cgender");
+				Timestamp crdate = rs.getTimestamp("crdate");
+				
+				dtos.add(new CustomerDTO(cid, cpw, cname, ctel, cemail, caddress, cbirth, cgender, crdate));
+			}
+		} catch (SQLException e) {
+			System.out.println("회원목록가져오기실패" + e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e2) {}
+		}
+		
+		return dtos;
+	}
+	
+	// 등록된 회원수 가져오기(page 처리할때 pageCnt가져오기)
+	public int getCustomerTotCnt() {
+		int totCnt = FAIL;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT COUNT(*) FROM CUSTOMER";
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				totCnt = rs.getInt(1);				
+			}
+		} catch (SQLException e) {
+			System.out.println("회원목록가져오기실패" + e.getMessage());
+		} finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e2) {}
+		}
+		
+		return totCnt;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
