@@ -26,6 +26,15 @@
 		// 세션에 customer 객체로 저장
 		CustomerDTO customer = cDao.getCustomer(cid);
 		session.setAttribute("customer", customer);
+		session.setAttribute("cid", customer.getCid());
+		session.setAttribute("cpw",customer.getCpw());
+		session.setAttribute("cname",customer.getCname());
+		session.setAttribute("ctel", customer.getCtel());
+		session.setAttribute("cemail", customer.getCemail());
+		session.setAttribute("caddress",customer.getCaddress());
+		session.setAttribute("cbirth", customer.getCbirth());
+		session.setAttribute("cgender", customer.getCgender());
+		session.setAttribute("crdate",customer.getCrdate());
 		response.sendRedirect("../main/main.jsp");
 	}
 %>

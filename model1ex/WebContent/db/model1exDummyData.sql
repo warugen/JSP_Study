@@ -66,6 +66,10 @@ INSERT INTO FILEBOARD (fNUM, cID, fSUBJECT, fCONTENT, fFILENAME, fPW, fREF, fRE_
         VALUES (FILEBOARD_SEQ.nextval, 'EEE', 'EEE제목', 'EEE내용', 
                 NULL, '111', FILEBOARD_SEQ.CURRVAL, 0, 0, '192.168.20.59');
                 
+INSERT INTO FILEBOARD (fNUM, cID, fSUBJECT, fCONTENT, fFILENAME, fPW, fREF, fRE_STEP, fRE_LEVEL, fIP) 
+        VALUES (FILEBOARD_SEQ.nextval, 'AAA', 'files', 'files', 
+                'test.PNG', '111', FILEBOARD_SEQ.CURRVAL, 0, 0, '192.168.20.59');
+                
 -- 2번 글에대한 첫번째 답변글
 INSERT INTO FILEBOARD (fNUM, cID, fSUBJECT, fCONTENT, fFILENAME, fPW, fREF, fRE_STEP, fRE_LEVEL, fIP) 
         VALUES (FILEBOARD_SEQ.nextval, 'AAA', '내가 홍길동이다', '아버지를 아버지라 못하는데 어찌해야 하나요?', 

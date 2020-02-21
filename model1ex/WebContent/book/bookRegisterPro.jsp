@@ -96,14 +96,18 @@
 	
 	if(result == BookDao.SUCCESS){
 		%>
-		<script> alert('책 등록 성공'); </script>
+		<script> 
+			alert('책 등록 성공');
+			location.href='bookList.jsp';
+		</script>
 		<%
-		response.sendRedirect("bookList.jsp");
 	} else {
 		%>
-		<script> alert('책 등록 실패'); </script>
+		<script> 
+			alert('책 등록 실패');
+			location.href='bookList.jsp';
+		</script>
 		<%
-		response.sendRedirect("bookList.jsp");
 	}
 %>
 	<h3>책이름 : <%=bTitle %></h3>
