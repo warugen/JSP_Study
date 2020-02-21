@@ -116,8 +116,11 @@ header .lnb a {
 		<div class="logo" onclick="location.href='../main/main.jsp'">
 		<!--  
 			<img src="http://www.moel.go.kr/images/layout/logo.png" alt="로고">
+			<img src="../img/logo1-nobg.png" alt="로고" width="100">
+			<img src="../img/log_wide_noBg.png" alt="로고" height="100" >
 		-->
 			<img src="../img/logo1-nobg.png" alt="로고" width="100">
+			
 		</div>
 		<div class="lnb">
 			<ul>
