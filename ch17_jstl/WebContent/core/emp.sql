@@ -1,0 +1,4 @@
+SELECT * FROM EMP;
+
+SELECT * FROM EMP
+WHERE ENAME LIKE '%' || 'A' ||'%' AND JOB LIKE '%' || 'E' ||'%';
