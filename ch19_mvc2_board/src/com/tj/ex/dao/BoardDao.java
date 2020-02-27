@@ -306,10 +306,9 @@ public class BoardDao {
 			pstmt.setString(2, btitle);
 			pstmt.setString(3, bcontent);
 			pstmt.setInt(4, bgroup);
-			pstmt.setInt(5, bstep);
-			pstmt.setInt(6, bindent);
+			pstmt.setInt(5, bstep + 1);
+			pstmt.setInt(6, bindent + 1);
 			pstmt.setString(7, bip);
-			
 			result = pstmt.executeUpdate();
 			System.out.println(result == 1 ? "답변쓰기 성공" : "답변쓰기 실패");
 		} catch (Exception e) {
