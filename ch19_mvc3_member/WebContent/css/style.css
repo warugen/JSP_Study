@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: #E0E0E0;
+}
+
+table {
+	width: 60%;
+	margin: 10px auto;
+}
+
+td, th {
+	text-align: center;
+	padding: 10px;
+}
+
+caption {
+	font-size: 25px;
+	padding: 10px;
+}
+
+h2, b {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: black
+}
+
+
+.paging {
+	text-align: center;
+}
+
+input:not (.btn ), textarea {
+	width: 90%;
+}
