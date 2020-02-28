@@ -42,7 +42,6 @@ public class MJoinService implements MService {
 			String mName = mRequest.getParameter("mName");
 			String mEmail = mRequest.getParameter("mEmail");
 			String mBirthStr = mRequest.getParameter("mBirth");
-			System.out.println(5+(mBirthStr.equals("")? "빈거":"안빈거"));
 			Date mBirth = null;
 			if(!mBirthStr.equals("")) {
 				mBirth = Date.valueOf(mBirthStr);
@@ -52,9 +51,10 @@ public class MJoinService implements MService {
 			
 			// 아이디 중복체크
 			int result = mDao.mIdConfirm(mId);
+			// 없는 아이디면 dto 만들기
 			if(result == MemberDao.NONEXISTENT) {
 				MemberDto member = new MemberDto(mId, mPw, mName, mEmail, mPhoto, mBirth, mAddress, null);
-				System.out.println(member.toString());
+				System.out.println("MJoinService.java : "+member.toString());
 				result = mDao.joinMember(member);
 				if(result == MemberDao.SUCCESS) {
 					HttpSession session = request.getSession();
@@ -67,7 +67,6 @@ public class MJoinService implements MService {
 				request.setAttribute("errorMsg", "중복된 ID라 회원가입 불가합니다.");
 			}
 			
-			// 없는 아이디면 dto 만들기
 		} catch (Exception e) {
 			System.out.println("multipart : "+e.getMessage());
 		}
@@ -79,7 +78,16 @@ public class MJoinService implements MService {
 			
 			try {
 				is = new FileInputStream(serverFile);
-				os = new FileOutputStream("D:/mega_IT/source/6_JSP/ch19_mvc3_member/WebContent/memberPhotoUp/"+mPhoto);
+				/* 집과 학원 저장경로가 다르다 따로 설정해주기
+				 * 
+				 *  학원 경로
+				 *  os = new FileOutputStream("D:/mega_IT/source/6_JSP/ch19_mvc3_member/WebContent/memberPhotoUp/"+mPhoto);
+				 *  
+				 *  집 경로
+				 *  
+				 *  os = new FileOutputStream("C:/mega_IT/source/JSP_Study/ch19_mvc3_member/WebContent/memberPhotoUp/"+mPhoto);
+				 * */
+				os = new FileOutputStream("C:/mega_IT/source/JSP_Study/ch19_mvc3_member/WebContent/memberPhotoUp/"+mPhoto);
 				byte[] bs = new byte[(int)serverFile.length()];
 				while(true) {
 					int nReadByteCnt = is.read(bs);
@@ -95,30 +103,5 @@ public class MJoinService implements MService {
 				} catch (Exception e2) { }
 			}
 		}
-		
-		
 	}
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -49,7 +49,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECT COUNT(*) FROM MVC_MEMBER WHERE mID = ?";
+		String sql = "SELECT * FROM MVC_MEMBER WHERE mID = ?";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
