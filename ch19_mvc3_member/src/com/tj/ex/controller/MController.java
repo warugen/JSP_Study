@@ -9,9 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.tj.ex.service.MAllViewService;
 import com.tj.ex.service.MJoinService;
 import com.tj.ex.service.MLoginService;
 import com.tj.ex.service.MLogoutService;
+import com.tj.ex.service.MModifyService;
 import com.tj.ex.service.MService;
 
 /**
@@ -75,10 +77,14 @@ public class MController extends HttpServlet {
 			
 		} else if (command.equals("/modify.do")) {
 			// service의 execute() 호출 MModifyService.java (DB에 수정, 세션도 수정)
+			service = new MModifyService();
+			service.execute(request, response);
 			viewPage = "member/main.jsp";
 			
 		} else if (command.equals("/allView.do")) {
 			// service의 execute() 호출 MAllViewService.java (회원목록 가져오기)
+			service = new MAllViewService();
+			service.execute(request, response);
 			viewPage = "member/mAllView.jsp";
 			
 		} else if (command.equals("/logout.do")) {
